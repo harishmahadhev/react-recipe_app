@@ -1,0 +1,409 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  font-family: "Playfair Display", serif;
+}
+body {
+  background-color: white;
+}
+.home {
+  text-align: center;
+  margin-top: 100px;
+}
+.container header h1 {
+  font-weight: 600;
+  color: #ff8640;
+}
+.full-width {
+  position: absolute;
+  background-color: whitesmoke;
+  width: 100%;
+  height: 300px;
+  left: 0;
+  text-align: left;
+  z-index: -1;
+}
+.cuisine-title {
+  text-align: left;
+  margin: 20px 0;
+  font-weight: 400;
+}
+
+.food-search-box {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  margin: 30px 0;
+}
+.food-search-box .filter-btn {
+  display: grid;
+  align-items: center;
+  width: 50px;
+  height: 40px;
+  font-size: 1.25rem;
+  background: white;
+  color: #ff8640;
+  border-left-color: 0px solid none;
+  border: 1px solid transparent;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  border-bottom-left-radius: 0px;
+  border: 1px solid #ff8640;
+}
+.filter-btn:hover {
+  background: #ff8640;
+  color: white;
+
+  transition: all 0.4s ease;
+}
+.search-bar {
+  width: 600px;
+  padding: 0 1rem;
+  outline: 0;
+  height: 40px;
+  border: 0.2px solid #ff8640;
+  border-radius: 10px;
+  background: transparent;
+  border-right: 0px solid transparent;
+  border-top-left-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.filter-buttons {
+  list-style-type: none;
+  text-align: left;
+  margin: 0%;
+  display: inline;
+  padding: 0px;
+}
+.filter-buttons .filter-tabs {
+  margin: 30px 0;
+  display: flex;
+  justify-content: space-between;
+  align-content: space-between;
+  cursor: pointer;
+}
+
+.filter h1 {
+  display: inline;
+  position: relative;
+}
+.filter-cuisines {
+  color: black;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  list-style-type: none;
+  text-align: left;
+  height: 20rem;
+  margin-left: 3rem;
+}
+.filter-tab {
+  width: auto;
+  height: 300px;
+}
+.cuisine-entries {
+  cursor: pointer;
+}
+.cuisine-entries:hover {
+  color: #ff8640;
+  transition: all 0.3s ease;
+}
+
+.recipe {
+  display: grid;
+}
+.recipe .card {
+  border: none;
+  position: relative;
+  transition: all 0.4s ease;
+  background-color: transparent;
+}
+
+.card:hover .food-image {
+  filter: brightness(50%);
+  transition: all 0.4s ease;
+}
+.card:hover .food-label {
+  background-color: #ff8640;
+  color: white;
+  transition: all 0.4s ease;
+}
+.color {
+  background-color: #fa4f38;
+  border: none;
+}
+.recipe .add-to-cart {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: #fa4f38;
+  border: none;
+  position: relative;
+  bottom: 50px;
+}
+.recipe .cart-add {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: none;
+  position: relative;
+  width: 100%;
+  bottom: 50px;
+}
+.increment:hover,
+.decrement:hover {
+  background: #fa4f38;
+}
+.increment:focus,
+.decrement:focus {
+  background: #fa4f38;
+}
+.ingredient {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+.recipe .food-image {
+  border-radius: 20px;
+  transition: all 0.2s ease;
+}
+.recipe .food-label {
+  outline: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  height: 6rem;
+  border-radius: 20px;
+  background-color: white;
+  position: relative;
+  bottom: 3rem;
+  margin: auto;
+  padding: 10px;
+  font-weight: 700;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
+    rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+  /* height: 4rem; */
+}
+.recipe .delete-btn {
+  position: absolute;
+  color: white;
+  background: transparent;
+  border: none;
+  opacity: 0;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -80%);
+  transition: all 0.4s ease;
+}
+.top-right-hover:hover .delete-btn {
+  opacity: 1;
+  transform: translate(-50%, 30%);
+}
+.recipe .top-right-hover {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  cursor: pointer;
+}
+.ingredient {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
+    rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
+    rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+  z-index: 100;
+  width: 600px;
+  height: auto;
+  border-radius: 10px;
+  padding: 20px;
+}
+.ingredient ul {
+  color: #ff8640;
+  font-size: 1rem;
+  text-align: left;
+  margin: auto;
+  padding: 10px 80px;
+}
+.ingredient-lines {
+  display: flex;
+  flex-direction: column;
+}
+.ingredient-lines h4 {
+  margin: 20px;
+}
+.ingredient .close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  color: #ff8640;
+  background-color: transparent;
+  border: none;
+}
+.link {
+  color: #ffffff;
+}
+.link:hover,
+.link:active,
+.link:focus {
+  color: #ff8640;
+  transition: all 0.4s ease;
+}
+@media screen and (max-width: 850px) {
+  .filter-cuisines {
+    color: black;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 0px;
+    list-style-type: none;
+    text-align: left;
+    height: 300px;
+    width: 80px;
+    margin: 10px 0px;
+    /* font-size: 10px; */
+    /* background-color: #ff8640; */
+  }
+}
+@media screen and (max-width: 580px) {
+  .filter-cuisines {
+    color: black;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 15px;
+    list-style-type: none;
+    text-align: left;
+    height: 300px;
+    margin-left: 40px;
+    font-size: 13px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .filter-cuisines {
+    color: black;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 20px;
+    list-style-type: none;
+    text-align: left;
+    height: 300px;
+    margin-left: 30px;
+    font-size: 10px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .filter-cuisines {
+    color: black;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 20px;
+    list-style-type: none;
+    text-align: left;
+    height: 300px;
+    margin-left: 10px;
+    font-size: 10px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .filter-cuisines {
+    color: black;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 20px;
+    list-style-type: none;
+    text-align: left;
+    height: 300px;
+    margin-left: 10px;
+    font-size: 10px;
+  }
+}
+@media screen and (max-width: 370px) {
+  .filter-cuisines {
+    color: black;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 20px;
+    list-style-type: none;
+    text-align: left;
+    height: 300px;
+    margin-left: 5px;
+    font-size: 10px;
+  }
+}
+@media screen and (max-width: 350px) {
+  .filter-cuisines {
+    color: black;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 20px;
+    list-style-type: none;
+    text-align: left;
+    height: 300px;
+    margin-left: -0px;
+    font-size: 8px;
+  }
+  .filter h1 {
+    display: inline;
+    position: relative;
+    margin: 0 0 30px 0;
+    font-size: 30px;
+  }
+}
+@media screen and (max-width: 300px) {
+  .filter-cuisines {
+    color: black;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 15px;
+    list-style-type: none;
+    text-align: left;
+    height: 300px;
+    margin-left: -0px;
+    font-size: 8px;
+  }
+  .filter h1 {
+    display: inline;
+    position: relative;
+    margin: 0 0 30px 0;
+    font-size: 30px;
+  }
+}
+@media screen and (max-width: 280px) {
+  .filter-cuisines {
+    color: black;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 15px;
+    list-style-type: none;
+    text-align: left;
+    height: 300px;
+    margin-left: -0px;
+    font-size: 7px;
+  }
+  .filter h1 {
+    display: inline;
+    position: relative;
+    margin: 0 0 30px 0;
+    font-size: 30px;
+  }
+}
