@@ -1,2 +1,2 @@
-# react-recipe_app
+# react-recipe-app
 
